@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AVL Tree Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+  <h1>🌳 AVL Tree Visualizer</h1>
+
+  <div class="controls">
+    <input type="number" id="valueInput" placeholder="Enter value" />
+    <button onclick="insertValue()">Insert</button>
+    <button onclick="resetTree()">Reset</button>
+  </div>
+
+  <div class="info">
+    <p id="message">Insert values to see AVL balancing</p>
+  </div>
+
+  <svg id="treeCanvas"></svg>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

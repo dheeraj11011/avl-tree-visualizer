@@ -1,0 +1,140 @@
+/* ====== GLOBAL ====== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ====== CONTROLS ====== */
+.controls {
+  margin: 15px 0;
+}
+
+input {
+  padding: 9px;
+  width: 130px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+button {
+  padding: 9px 16px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #4cafef;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  background: #6fc3ff;
+  transform: translateY(-1px);
+}
+
+/* ====== INFO PANEL ====== */
+.info {
+  margin: 10px;
+  min-height: 24px;
+  font-size: 14px;
+  color: #ffd166;
+}
+
+/* ====== SVG CANVAS ====== */
+svg {
+  width: 100%;
+  height: 520px;
+  background: radial-gradient(circle at top, #1b1b2b, #0f0f18);
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* ====== NODE STYLE ====== */
+.node {
+  fill: #4cafef;
+  stroke: #ffffff;
+  stroke-width: 2;
+  cursor: pointer;
+
+  /* 🔥 KEY FOR SMOOTH MOVEMENT */
+  transition:
+    cx 0.6s ease-in-out,
+    cy 0.6s ease-in-out,
+    fill 0.3s ease,
+    r 0.3s ease;
+}
+
+/* Hover effect */
+.node:hover {
+  fill: #7fd4ff;
+  r: 22;
+}
+
+/* Node value text */
+.node-text {
+  fill: #000;
+  font-size: 14px;
+  font-weight: bold;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+
+  /* Sync text movement with node */
+  transition:
+    x 0.6s ease-in-out,
+    y 0.6s ease-in-out;
+}
+
+/* ====== EDGES (LINES) ====== */
+line {
+  stroke: #9aa4ff;
+  stroke-width: 2;
+  opacity: 0.85;
+
+  /* 🔥 Smooth edge movement */
+  transition:
+    x1 0.6s ease-in-out,
+    y1 0.6s ease-in-out,
+    x2 0.6s ease-in-out,
+    y2 0.6s ease-in-out,
+    stroke 0.3s ease;
+}
+
+/* ====== IMBALANCE & ROTATION ====== */
+.imbalanced {
+  fill: #ff5252 !important;
+}
+
+.rotating {
+  fill: #ff9800 !important;
+  stroke-width: 3;
+}
+
+/* ====== ANIMATION FEEDBACK ====== */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.rotating {
+  animation: pulse 0.6s ease-in-out;
+}
